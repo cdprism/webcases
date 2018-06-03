@@ -1,7 +1,68 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
+
+    <!--servlet-->
+    <context-param>
+        <param-name>driver</param-name>
+        <param-value>com.jdbc.mysql.Driver</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>org.shancm.webcase</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>demoServlet</servlet-name>
+        <servlet-class>org.shancm.webcase.servletcase.DemoServlet</servlet-class>
+        <init-param>
+            <param-name>user</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>pwd</param-name>
+            <param-value>12345</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+
+
+
+    <!--session-->
+    <servlet>
+        <servlet-name>cookie</servlet-name>
+        <servlet-class>org.shancm.webcase.sessioncase.CookieDemo</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>lastView</servlet-name>
+        <servlet-class>org.shancm.webcase.sessioncase.LastViewDemo</servlet-class>
+    </servlet>
+
+
+
+
+
+    <servlet-mapping>
+        <servlet-name>demoServlet</servlet-name>
+        <url-pattern>/demo.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>cookie</servlet-name>
+        <url-pattern>/cookie.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>lastView</servlet-name>
+        <url-pattern>/lastView.do</url-pattern>
+    </servlet-mapping>
+
+
+
 </web-app>
