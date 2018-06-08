@@ -1,4 +1,4 @@
-package org.shancm.webcase.sessioncase;
+package org.shancm.webcase.cookiecase;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 
 public class CookieDemo extends HttpServlet {
 
+    @Override
     public void service(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException{
 

@@ -5,6 +5,56 @@
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
 
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>Tom</param-value>
+    </context-param>
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>123456</param-value>
+    </context-param>
+
+    <filter>
+        <filter-name>filterDemo</filter-name>
+        <filter-class>org.shancm.webcase.filtercase.FilterDemo</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>filterDemo</filter-name>
+        <url-pattern>/filter.do</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>filterDemo2</filter-name>
+        <filter-class>org.shancm.webcase.filtercase.FilterDemo2</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>filterDemo2</filter-name>
+        <url-pattern>/filter.do</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>usernameFilter</filter-name>
+        <filter-class>org.shancm.webcase.filtercase.UsernameFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>usernameFilter</filter-name>
+        <url-pattern>/login.do</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>passwordFilter</filter-name>
+        <filter-class>org.shancm.webcase.filtercase.PasswordFilter</filter-class>
+        <init-param>
+            <param-name>passwords</param-name>
+            <param-value>123456</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>passwordFilter</filter-name>
+        <url-pattern>/login.do</url-pattern>
+    </filter-mapping>
+
     <!--servlet-->
     <context-param>
         <param-name>driver</param-name>
@@ -18,7 +68,7 @@
 
     <servlet>
         <servlet-name>demoServlet</servlet-name>
-        <servlet-class>org.shancm.webcase.servletcase.DemoServlet</servlet-class>
+        <servlet-class>org.shancm.webcase.servletcase.ServletDemo</servlet-class>
         <init-param>
             <param-name>user</param-name>
             <param-value>root</param-value>
@@ -36,12 +86,12 @@
     <!--session-->
     <servlet>
         <servlet-name>cookie</servlet-name>
-        <servlet-class>org.shancm.webcase.sessioncase.CookieDemo</servlet-class>
+        <servlet-class>org.shancm.webcase.cookiecase.CookieDemo</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>lastView</servlet-name>
-        <servlet-class>org.shancm.webcase.sessioncase.LastViewDemo</servlet-class>
+        <servlet-class>org.shancm.webcase.cookiecase.LastViewDemo</servlet-class>
     </servlet>
 
 
