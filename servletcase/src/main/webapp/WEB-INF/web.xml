@@ -14,7 +14,7 @@
         <param-value>123456</param-value>
     </context-param>
 
-    <filter>
+    <!--<filter>
         <filter-name>filterDemo</filter-name>
         <filter-class>org.shancm.webcase.filtercase.FilterDemo</filter-class>
     </filter>
@@ -53,10 +53,10 @@
     <filter-mapping>
         <filter-name>passwordFilter</filter-name>
         <url-pattern>/login.do</url-pattern>
-    </filter-mapping>
+    </filter-mapping>-->
 
     <!--servlet-->
-    <context-param>
+    <!--<context-param>
         <param-name>driver</param-name>
         <param-value>com.jdbc.mysql.Driver</param-value>
     </context-param>
@@ -64,7 +64,7 @@
     <context-param>
         <param-name>url</param-name>
         <param-value>org.shancm.webcase</param-value>
-    </context-param>
+    </context-param>-->
 
     <servlet>
         <servlet-name>demoServlet</servlet-name>
@@ -81,8 +81,6 @@
     </servlet>
 
 
-
-
     <!--session-->
     <servlet>
         <servlet-name>cookie</servlet-name>
@@ -93,9 +91,6 @@
         <servlet-name>lastView</servlet-name>
         <servlet-class>org.shancm.webcase.cookiecase.LastViewDemo</servlet-class>
     </servlet>
-
-
-
 
 
     <servlet-mapping>
@@ -112,7 +107,6 @@
         <servlet-name>lastView</servlet-name>
         <url-pattern>/lastView.do</url-pattern>
     </servlet-mapping>
-
 
 
 </web-app>

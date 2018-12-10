@@ -29,6 +29,11 @@ public class QueueProducer {
     private Destination destination;
     private MessageProducer messageProducer;
 
+    public static void main(String[] args) {
+        QueueProducer producer = new QueueProducer();
+        producer.doSend();
+    }
+
     public void doSend() {
         try {
             /**

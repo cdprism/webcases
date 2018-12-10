@@ -15,8 +15,14 @@ public class QueueConsumer {
     private Connection connection;
     private Session session;
     private Destination destination;
-    // 注意这里是消息接收（消费）者
+    /**注意这里是消息接收（消费）者*/
     private MessageConsumer messageConsumer;
+
+    public static void main(String[] args) {
+        QueueConsumer consumer = new QueueConsumer();
+        consumer.doReceive();
+    }
+
 
     public void doReceive() {
         try {
